@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-leftside">
+            <img src="../Resources/future-talents-school-high-resolution-logo.png">
+            <a href="index.html">Accueil</a>
+        </div>
+        <div class="header-rightside">
+            <a href="Login.html">Login</a>
+            <a href="signUp.html">SignUp</a>
+        </div>
+    </header>
+
+    <section class="body">
+        <form id="loginForm">
+            <h1>Se connecter</h1>
+            <div class="form-cont">
+                <div class="form-cont-cont">
+                    <label for="email">Adresse email</label>
+                    <span>
+                        <input type="email" placeholder=" Email Adresse" id="form-input-email" required>
+                        <p id="email-error"></p>
+                    </span>
+                </div>
+                <div class="form-cont-cont">
+                    <label for="password">Mot de passe</label>
+                    <span>
+                        <input type="password" placeholder=" Password" id="form-input-password" required>
+                        <p id="password-error"></p>
+                    </span>
+                </div>
+            </div>
+            <span><input type="checkbox" onclick="togglePassword()" id="password-toggle"> Show/Hide Password</span>
+            <span>Don't have an account? <a href="signUp.html" class="signUp">signUp</a></span>
+            <input type="submit" value="Se connecter" id="form-btn">
+        </form>
+    </section>
+
+    <footer>
+        Copyright 2024 &copy; Khalil Tourabi - Tous droits réservés.
+    </footer>
+
+    <script src="./Login.js"></script>
+
+</body>
+
+</html>

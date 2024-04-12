@@ -1,0 +1,388 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ce0033;
+}
+
+.header-leftside,
+.header-rightside {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.header-leftside a,
+.header-rightside a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-rightside a {
+    display: flex;
+    align-items: center;
+}
+
+.header-rightside span {
+    font-size: 30px;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.body {
+    padding: 20px;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.body-sec1 {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.body-sec1 h1 {
+    font-size: 35px;
+    color: #ce0033;
+}
+
+.body-sec1 span {
+    font-size: 30px;
+}
+
+.body-sec1 {
+    padding-bottom: 50px;
+}
+
+tr,
+td {
+    text-align: center;
+    padding: 10px 50px;
+}
+
+tr:first-child {
+    height: 60px;
+}
+
+tr {
+    border: 1px gray solid;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px gray solid;
+    border-radius: 10px;
+}
+
+.tab-titres {
+    background-color: rgb(230, 230, 230);
+}
+
+#add {
+    text-decoration: none;
+    padding: 5px 40px;
+    border: 1px solid #ce0033;
+    background-color: #ce0033;
+    color: white;
+    border-radius: 10px;
+}
+
+i {
+    font-size: 25px;
+}
+
+.body-sec2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 85%;
+    padding-bottom: 10px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ce0033;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Style for the dialog */
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.dialog-box,
+.dialog-box-modify,
+.dialog-box-difficulte,
+.dialog-box-confirmation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 2;
+    display: none;
+}
+
+/* confirmation css */
+
+.confirmation-container p {
+    margin-bottom: 15px;
+}
+
+.confirmation-container button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirmation-container button#true {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.confirmation-container button#true:hover {
+    background-color: #45a049;
+}
+
+.confirmation-container button#false {
+    background-color: #f44336;
+    color: white;
+}
+
+.confirmation-container button#false:hover {
+    background-color: #d32f2f;
+}
+
+#confirmation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* end of confirmation css */
+
+.dialog-box-difficulte {
+    width: 50%;
+}
+
+/* moduls style */
+.dialog-box, .dialog-box-modify {
+    width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+
+.dialog-box h1, .dialog-box-modify h1 {
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.dialog-box td, .dialog-box-modify td {
+    padding: 5px;
+    text-align: left;
+}
+
+.dialog-box input[type="text"], .dialog-box-modify input[type="text"],
+.dialog-box textarea, .dialog-box-modify textarea,
+.dialog-box select, .dialog-box-modify select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #7e7d7d;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#buttons button,
+#buttons input[type="button"] {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background-color: #ce0033;
+    color: white;
+    font-size: 17px;
+}
+
+.dialog-box table,
+.dialog-box tr,
+.dialog-box td,
+.dialog-box-modify table,
+.dialog-box-modify tr,
+.dialog-box-modify td,
+.dialog-box-difficulte table,
+.dialog-box-difficulte td {
+    border: none;
+}
+
+.dialog-box table,
+.dialog-box-modify table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.dialog-box td,
+.dialog-box-modify td,
+.dialog-box-difficulte td {
+    padding: 10px 20px 10px 20px;
+}
+
+/* Style difficulte modul */
+.dif-container {
+    text-align: center;
+}
+
+.dif-container h2 {
+    margin-bottom: 20px;
+}
+
+.dif-container table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dif-container td {
+    padding: 5px;
+    text-align: left;
+}
+
+#close-diff {
+    padding: 10px 40px;
+    background-color: #ce0033;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.dialog-box-difficulte td:first-child {
+    background-color: #dedbdb;
+    width: 30%;
+}
+.dialog-box-difficulte td:last-child {
+    width: 70%;
+}
+
+#titre-error,
+#brief-error,
+#msg-error,
+#titre-modif-error,
+#brief-modif-error,
+#msg-modif-error {
+    color: red;
+    font-size: small;
+}
+
+
+/* responsive */
+@media only screen and (max-width: 768px) {
+    .body {
+        width: 90%; 
+    }
+    
+    .body-sec2 {
+        width: 95%; 
+    }
+    
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    tr,
+    td {
+        padding: 5px;
+    }
+    
+    .dialog-box,
+    .dialog-box-modify,
+    .dialog-box-difficulte {
+        width: 90%; 
+    }
+    
+    .dialog-box td,
+    .dialog-box-modify td,
+    .dialog-box-difficulte td {
+        padding: 5px; 
+    }
+    
+    .dialog-box h1,
+    .dialog-box-modify h1 {
+        font-size: 1.3em;
+    }
+    
+    input[type="submit"],
+    button {
+        padding: 8px 30px; 
+        font-size: 14px;
+    }
+    
+    .dialog-box-difficulte button {
+        padding: 8px 30px; 
+        font-size: 14px;
+    }    
+    .dif-container td {
+        padding: 3px;
+    }
+    
+    #close-diff {
+        width: 100%;
+    }
+}

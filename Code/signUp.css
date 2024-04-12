@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ce0033;
+}
+
+.header-leftside, .header-rightside {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-leftside a, .header-rightside a {
+    text-decoration: none;
+    color: white;
+}
+
+header img {
+    width: 60px;
+    height: auto;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+.body {
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f3f0f0;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.form-cont-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.login {
+    text-decoration: none;
+    color: #ce0033;
+}
+
+#form-input, #form-email, #form-input-password {
+    height: 40px;
+    padding: 8px;
+}
+
+p {
+    color: red;
+    font-size: small;
+    text-align: center;
+}
+
+#form-btn {
+    padding: 10px 20px;
+    color: white;
+    background-color: #ce0033;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    background-color: #ce0033;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

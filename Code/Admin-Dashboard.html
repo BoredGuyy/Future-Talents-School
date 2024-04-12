@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Admin-Dashboard.css">
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-leftside">
+            <img src="../Resources/future-talents-school-high-resolution-logo.png">
+        </div>
+        <div class="header-rightside">
+            <a href="index.html" id="logout"><span class="material-symbols-outlined"
+                    style="margin-right: 5px;">logout</span>Logout</a>
+        </div>
+    </header>
+
+    <section class="body">
+        <div class="body-sec1">
+            <h1>Admin Dashboard</h1>
+            <span id="user-name">Mohammed</span>
+        </div>
+        <div class="body-sec3">
+            <table id="data">
+                <tr>
+                    <td class="tab-f">Nom</td>
+                    <td class="tab-f">Date de creation</td>
+                    <td class="tab-f">difficulte</td>
+                    <td class="tab-f">valide</td>
+                    <td class="tab-f"></td>
+                </tr>
+                <!-- <tr>
+                    <td>Karim</td>
+                    <td>15/03/2024</td>
+                    <td><i class="fa-solid fa-eye" style="color: #000000; cursor: pointer;" id="diff"></i></td>
+                    <td><i class="fa-solid fa-square-xmark" style="color: #ff0000;"></i></td>
+                    <td><span class="material-symbols-outlined" style="cursor: pointer;" id="check">forum</span></td>
+                </tr> -->
+            </table>
+        </div>
+    </section>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box" id="dialogBox">
+        <form>
+            <h2>vérifier la difficulté</h2>
+            <span>
+                <input type="radio" name="answers" id="encadre" value="Encadré dans leurs recherches de solutions">
+                 Encadré dans leurs recherches de solutions
+            </span>
+            <span>
+                <p id="msg-error"></p>
+                <textarea name="message" id="encadre-message" cols="25" rows="5"></textarea>
+            </span>
+            <span>
+                <input type="radio" name="answers" id="aide-pairs" value="Aidé par leurs pairs">
+                Aidé par leurs pairs
+            </span>
+            <span>
+                <input type="radio" name="answers" id="intervenetion" value="intervenetion derecte de formateur">
+                intervenetion derecte de formateur
+            </span>
+            <div id="buttons">
+                <input type="submit" value="Validee" id="valide-btn">
+                <button id="close" onclick="closeDialog()">Fermer</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box-difficulte" id="dialogBox-difficulte">
+        <div class="dif-container">
+            <h2>Difficulte</h2>
+            <table>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Formateur:</p>
+                    </td>
+                    <td>
+                        <p id="formateur-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Bootcamp:</p>
+                    </td>
+                    <td>
+                        <p id="bootcamp-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Title:</p>
+                    </td>
+                    <td>
+                        <p id="title-answer">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Brief:</p>
+                    </td>
+                    <td>
+                        <p id="brief-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">La difficulte:</p>
+                    </td>
+                    <td>
+                        <p id="diff-answer">answer</p>
+                    </td>
+                </tr>
+                <tr id="hidden">
+                    <td>
+                        <p id="admin-title">Admin note:</p>
+                    </td>
+                    <td>
+                        <p id="admin-answer">N/A</p>
+                    </td>
+                </tr>
+            </table>
+            <button onclick="closeDiff()">Fermer</button>
+        </div>
+    </div>
+
+    <footer>
+        Copyright 2024 &copy; Khalil Tourabi - Tous droits réservés.
+    </footer>
+
+    <script src="Admin-Dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Student-Dashboard.css">
+    <title>Student Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <div class="header-leftside">
+            <img src="../Resources/future-talents-school-high-resolution-logo.png">
+        </div>
+        <div class="header-rightside">
+            <div class="header-rightside">
+                <a href="index.html" id="logout"><span class="material-symbols-outlined"
+                        style="margin-right: 5px;">logout</span>Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <hr>
+
+    <section class="body">
+        <div class="body-sec1">
+            <h1>Student Dashboard</h1>
+            <span id="user-name">Bienvenue karim</span>
+        </div>
+        <div class="body-sec2">
+            <a href="#" onclick="openDialog()" id="add">Ajouter</a>
+        </div>
+        <div class="body-sec3">
+            <table id="data">
+                <tr>
+                    <td class="tab-titres">Titre</td>
+                    <td class="tab-titres">Date de creation</td>
+                    <td class="tab-titres">difficulté</td>
+                    <td class="tab-titres">Validé</td>
+                    <td class="tab-titres"></td>
+                    <td class="tab-titres"></td>
+                </tr>
+                <!-- <tr>
+                    <td>Karim</td>
+                    <td>15/03/2024</td>
+                    <td><i class="fa-solid fa-eye" style="color: #000000;"></i></td>
+                    <td><i class="fa-solid fa-square-xmark" style="color: #ff0000;"></i></td>
+                    <td><i class="fa-solid fa-pen-to-square" style="color: #3f74fd; cursor: pointer;"
+                            onclick="showDialog()"></i></td>
+                    <td><i class="fa-solid fa-trash-can" style="color: #ff0000;"></i></td>
+                </tr> -->
+            </table>
+        </div>
+    </section>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box" id="dialogBox">
+        <form>
+            <h1>Ajouter votre difficulte</h1>
+            <table>
+                <tr>
+                    <td>
+                        <label for="Formateur">Formateur</label>
+                    </td>
+                    <td>
+                        <select name="Formateurs" id="formateurs">
+                            <option value="abdelaziz">abdelaziz</option>
+                            <option value="hamza">Hamza</option>
+                            <option value="ilyas">Ilyas</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="bootcamp">Bootcamp</label>
+                    </td>
+                    <td>
+                        <select name="bootcamps" id="bootcamps">
+                            <option value="mern">Mern</option>
+                            <option value="laravel">Laravel</option>
+                            <option value="java">Java</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="titre">Titre</label>
+                    </td>
+                    <td>
+                        <span>
+                            <input type="text" name="titre" id="titre">
+                            <p id="titre-error"></p>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="brief">Brief</label>
+                    </td>
+                    <td>
+                        <span>
+                            <input type="text" name="brief" id="brief">
+                            <p id="brief-error"></p>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="difficulte">La difficulte a rencontrée</label>
+                    </td>
+                    <td>
+                        <span>
+                            <textarea name="difficulte" id="difficulte" cols="20" rows="5"></textarea>
+                            <p id="msg-error"></p>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <div id="buttons">
+                <input type="button" value="Ajouter" id="ajouter" style="cursor: pointer;">
+                <button id="close-dialog" onclick="closeDialog()" style="cursor: pointer;">Fermer</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box-modify" id="dialogBox-modify">
+        <form action="">
+            <h1>Modifier votre difficulte</h1>
+            <table id="data">
+                <tr>
+                    <td>
+                        <label for="titre">Titre</label>
+                    </td>
+                    <td>
+                        <span>
+                            <input type="text" name="titre" id="titre-modification">
+                            <p id="titre-modif-error"></p>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="brief">Brief</label>
+                    </td>
+                    <td>
+                        <span>
+                            <input type="text" name="brief" id="brief-modification">
+                            <p id="brief-modif-error"></p>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="difficulte">La difficulte a rencontrée</label>
+                    </td>
+                    <td>
+                        <span>
+                            <textarea name="difficulte" id="difficulte-modification" cols="20" rows="5"></textarea>
+                            <p id="msg-modif-error"></p>
+                        </span>
+                    </td>
+                </tr>
+            </table>
+            <div id="buttons">
+                <input type="button" value="modifier" id="modifier" style="cursor: pointer;">
+                <button id="close-modifer-dialog" onclick="closeDialogModify()" style="cursor: pointer;">Fermer</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box-difficulte" id="dialogBox-difficulte">
+        <div class="dif-container">
+            <h2>Difficulte</h2>
+            <table>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Formateur:</p>
+                    </td>
+                    <td>
+                        <p id="formateur-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Bootcamp:</p>
+                    </td>
+                    <td>
+                        <p id="bootcamp-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Title:</p>
+                    </td>
+                    <td>
+                        <p id="title-answer">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">Brief:</p>
+                    </td>
+                    <td>
+                        <p id="brief-name">answer</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p id="diff-titles">La difficulte:</p>
+                    </td>
+                    <td>
+                        <p id="diff-answer">answer</p>
+                    </td>
+                </tr>
+                <tr id="hidden">
+                    <td>
+                        <p id="admin-title">Admin note:</p>
+                    </td>
+                    <td>
+                        <p id="admin-answer"></p>
+                    </td>
+                </tr>
+            </table>
+            <button id="close-diff" onclick="closeDiff()">Fermer</button>
+        </div>
+    </div>
+
+    <div class="dialog-overlay" id="dialogOverlay"></div>
+    <div class="dialog-box-confirmation" id="dialogBox-confirmation">
+        <div class="confirmation-container">
+            <p>Êtes-vous sûr de bien vouloir supprimer cet élément?</p>
+            <div id="confirmation-buttons">
+                <button id="true">Oui</button>
+                <button id="false">Non</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Copyright 2024 &copy; Khalil Tourabi - Tous droits réservés.
+    </footer>
+
+    <script src="./Student-Dashboard.js"></script>
+
+</body>
+
+</html>
