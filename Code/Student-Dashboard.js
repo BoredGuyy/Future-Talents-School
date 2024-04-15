@@ -16,32 +16,9 @@ function isLoggedIn() {
 
 window.onload = function () {
   if (!isLoggedIn()) {
-    alert("connectez-vous d'abord");
     window.location.href = "Login.html";
   }
 };
-
-//stop user from navigating to index page unless he logout
-window.addEventListener("beforeunload", (e) => {
-  let users = JSON.parse(localStorage.getItem("users"));
-
-  let check = true;
-
-  for (let i = 0; i < users.length; i++) {
-    if (users[i].isActive == true) {
-      check = false;
-      break;
-    }
-  }
-
-  if (conditionMet(check)) {
-    e.preventDefault();
-  }
-});
-
-function conditionMet(check) {
-  return check;
-}
 
 document.getElementById("add").addEventListener("click", () => {
   var overlay = document.getElementById("dialogOverlay");
@@ -276,11 +253,24 @@ document.addEventListener("DOMContentLoaded", () => {
     dialog.style.display = "block";
 
     let data = JSON.parse(localStorage.getItem("difficultes")) || [];
+    
+    for (let i = 0; i < data.length; i++) {
+      if (i == index) {
+        var titre = document.getElementById("titre-modification").value = data[i].titre;
+      var brief = document.getElementById("brief-modification").value = data[i].brief;
+      var difficulte = document.getElementById("difficulte-modification").value = data[i].msg;
+        data[i].titre = titre;
+        data[i].brief = brief;
+        data[i].msg = difficulte;
+        break;
+      }
+    }
 
     document.getElementById("modifier").addEventListener("click", () => {
       var titre = document.getElementById("titre-modification").value;
       var brief = document.getElementById("brief-modification").value;
       var difficulte = document.getElementById("difficulte-modification").value;
+      
 
       if (titre == "") {
         document.getElementById("titre-modif-error").innerHTML =

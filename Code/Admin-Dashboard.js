@@ -40,14 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
   let difficultes = JSON.parse(localStorage.getItem("difficultes")) || [];
   let users = JSON.parse(localStorage.getItem("users")) || [];
 
+  let user = null;
 
+  for(let i = 0; i < users.length; i++)
+  {
+    if(users[i].isActive == true)
+      user = users[i];
+    break;
+  }
+
+  if (user !== null) {
     if (user.isActive && !user.isAdmin) {
       window.location.href = "Student-Dashboard.html";
-    }else if (!user.isActive)
-     window.location.href = "Login.html"
-
-
-
+    } else if (!user.isActive) {
+      window.location.href = "Login.html"
+    }
+  } else {
+    window.location.href = "Login.html"
+  }
 
   const table = document.getElementById("data");
 
@@ -122,20 +132,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let difficultes = JSON.parse(localStorage.getItem("difficultes")) || [];
 
+    document.getElementById("encadre").addEventListener("click", () => {
+      document.getElementById("encadre-message").style.display = "block";
+      document.getElementById("pairs-message").style.display = "none";
+      document.getElementById("intervention-message").style.display = "none";
+    })
+    document.getElementById("aide-pairs").addEventListener("click", () => {
+      document.getElementById("pairs-message").style.display = "block";
+      document.getElementById("encadre-message").style.display = "none";
+      document.getElementById("intervention-message").style.display = "none";
+    })
+    document.getElementById("intervenetion").addEventListener("click", () => {
+      document.getElementById("intervention-message").style.display = "block";
+      document.getElementById("encadre-message").style.display = "none";
+      document.getElementById("pairs-message").style.display = "none";
+    })
+
     document.getElementById("valide-btn").addEventListener("click", (e) => {
       e.preventDefault();
 
       let answers = document.getElementsByName("answers");
       let message = document.getElementById("encadre-message").value;
+      let messagePairs = document.getElementById("pairs-message").value;
+      let messageIntervention = document.getElementById("intervention-message").value;
 
       for (let i = 0; i < answers.length; i++) {
         if (answers[i].checked) {
-          if (
-            answers[i].value == "Encadré dans leurs recherches de solutions"
-          ) {
+          if (answers[i].value == "Encadré dans leurs recherches de solutions") {
             if (message == "") {
-              document.getElementById("msg-error").textContent =
-                "*Champ obligatoire";
+              document.getElementById("msg-error").textContent = "*Champ obligatoire";
               return;
             }
             difficultes[index].adminProc = true;
@@ -145,16 +170,26 @@ document.addEventListener("DOMContentLoaded", () => {
             location.reload();
           }
           if (answers[i].value == "Aidé par leurs pairs") {
+            if (messagePairs == "") {
+              document.getElementById("msg-error-pairs").textContent = "*Champ obligatoire";
+              return;
+            }
+
             difficultes[index].adminProc = true;
-            difficultes[index].adminResponse = "Aidé par leurs pairs";
+            difficultes[index].adminResponse = messagePairs;
 
             localStorage.setItem("difficultes", JSON.stringify(difficultes));
             location.reload();
           }
           if (answers[i].value == "intervenetion derecte de formateur") {
+            if (messageIntervention == "") {
+              document.getElementById("msg-error-intervention").textContent = "*Champ obligatoire";
+              return;
+            }
+
+            console.log(messageIntervention);
             difficultes[index].adminProc = true;
-            difficultes[index].adminResponse =
-              "intervenetion derecte de formateur";
+            difficultes[index].adminResponse = messageIntervention;
 
             localStorage.setItem("difficultes", JSON.stringify(difficultes));
             location.reload();

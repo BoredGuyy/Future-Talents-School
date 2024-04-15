@@ -62,15 +62,23 @@
             </span>
             <span>
                 <p id="msg-error"></p>
-                <textarea name="message" id="encadre-message" cols="25" rows="5"></textarea>
+                <textarea name="message" id="encadre-message" cols="25" rows="5" style="display: none;"></textarea>
             </span>
             <span>
                 <input type="radio" name="answers" id="aide-pairs" value="Aidé par leurs pairs">
                 Aidé par leurs pairs
             </span>
             <span>
+                <p id="msg-error-pairs"></p>
+                <textarea name="message" id="pairs-message" cols="25" rows="5" style="display: none;"></textarea>
+            </span>
+            <span>
                 <input type="radio" name="answers" id="intervenetion" value="intervenetion derecte de formateur">
                 intervenetion derecte de formateur
+            </span>
+            <span>
+                <p id="msg-error-intervention"></p>
+                <textarea name="message" id="intervention-message" cols="25" rows="5" style="display: none;"></textarea>
             </span>
             <div id="buttons">
                 <input type="submit" value="Validee" id="valide-btn">

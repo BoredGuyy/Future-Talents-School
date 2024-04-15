@@ -1,6 +1,6 @@
 // Stop user from coming to the index page without signing in
 function isLoggedIn() {
-  let users = JSON.parse(localStorage.getItem("users"));
+  let users = JSON.parse(localStorage.getItem("users")) || [];
 
   let check = true;
 

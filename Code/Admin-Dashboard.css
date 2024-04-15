@@ -254,9 +254,19 @@ button {
     width: 50%;
 }
 
-#msg-error {
+#msg-error,
+#msg-error-intervention,
+#msg-error-pairs {
     font-size: small;
     color: red;
+}
+
+.dialog-box-difficulte td:first-child {
+    background-color: #dedbdb;
+    width: 30%;
+}
+.dialog-box-difficulte td:last-child {
+    width: 70%;
 }
 
 /* responsive */
