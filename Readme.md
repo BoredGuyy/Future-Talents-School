@@ -1,4 +1,4 @@
-# Futur Talents School - Gestion des Blocages
+# Future Talents School - Gestion des Blocages
 
 Ce projet a pour objectif de développer une application web pour le centre de formations "Futur Talents School" afin de faciliter la gestion des blocages rencontrés par les étudiants tout au long de la journée. L'application permettra aux étudiants de signaler leurs blocages, aux formateurs de les valider et de fournir des informations sur les modalités de résolution des difficultés.
 
